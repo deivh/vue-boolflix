@@ -23,6 +23,7 @@
                 <div class="movieCard " v-for="(movie, index) in movie">
                     <div class="title">
                         <h2>
+                            {{ movie.name }}
                             {{ movie.title }}
                         </h2>
                     </div>
@@ -38,6 +39,24 @@
                             {{ movie.original_language}}
                         </p>
                     </div>
+                    <!-- <div class="tvseriesCard " v-for="(serie, index) in tvseries">
+                        <div class="title">
+                            <h2>
+                                {{ serie.title }}
+                            </h2>
+                        </div>
+                        <div class="overview">
+                            {{ serie.overview}}
+                        </div>
+                        <div class="infoCard">
+                            <p>
+                                {{ serie.release_date }}
+                            </p>
+    
+                            <p>
+                                {{ serie.original_language}}
+                            </p>
+                        </div> -->
                 </div>
             </div>
         </div>
