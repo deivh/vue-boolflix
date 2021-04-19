@@ -9,15 +9,15 @@ function initVue() {
             searchMovie: function() {
                 axios.get('https://api.themoviedb.org/3/search/movie', {
                     params: {
-                        'api_key': 'a3253d8c82755e87596f19e871262ec5',
+                        'api_key': 'd03fa56773fc8de0b8df06270921b491',
                         'query': this.inputSearch,
                     }
                 })
             .then(data => {
                 console.log(data);
                 console.log(this.inputSearch);
-                const Movies = data[1];
-                console.log(Movies);
+                this.movie = data.data.results;
+                console.log(movie);
                 })
 
             },

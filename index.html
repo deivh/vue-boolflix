@@ -3,14 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>Vue Dischi</title>
-        <!-- font awesame -->
+        <!-- font awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <!-- vue -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- axios -->
         <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
-        <!-- jquery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- css -->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/script.js"></script>
@@ -22,6 +20,25 @@
                 <button v-on:click="searchMovie">
                     GO!
                 </button>
+                <div class="movieCard " v-for="(movie, index) in movie">
+                    <div class="title">
+                        <h2>
+                            {{ movie.title }}
+                        </h2>
+                    </div>
+                    <div class="overview">
+                        {{ movie.overview}}
+                    </div>
+                    <div class="infoCard">
+                        <p>
+                            {{ movie.release_date }}
+                        </p>
+
+                        <p>
+                            {{ movie.original_language}}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
