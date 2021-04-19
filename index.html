@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue Dischi</title>
+        <!-- font awesame -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!-- vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="searchBar">
+                <input v-model="inputSearch" type="text">
+                <button v-on:click="searchMovie">
+                    GO!
+                </button>
+            </div>
+        </div>
+    </body>
+    </html>
