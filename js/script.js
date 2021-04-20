@@ -2,9 +2,9 @@ function initVue() {
     new Vue ({
         el: '#app',
         data: {
-            movie: [],
-            tvseries: [],
+            medias: [],
             inputSearch: '2021',
+            vote: ''
         },
         methods:  {
             searchMovie: function() {
@@ -18,21 +18,14 @@ function initVue() {
             .then(data => {
                 console.log(data);
                 console.log(this.inputSearch);
-                this.movie = data.data.results;
-                console.log(movie);
+                this.medias = data.data.results;
+                this.vote = this.medias.vote_average
+                console.log(this.medias);
                 });
-
-            // axios.get('https://api.themoviedb.org/3/search/tv', {
-            //     params: {
-            //         'api_key': 'd03fa56773fc8de0b8df06270921b491',
-            //         'query': this.inputSearch,
-            //     }    
-            //     })
-            // .then(data => {
-            //     console.log(data);
-            //     this.tvseries = data.data.results;
-            // })
             },
+            getRating: function(vote) {
+                return vote = parseInt(vote / 2)
+            }
 
         },
             

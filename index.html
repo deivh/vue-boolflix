@@ -16,47 +16,54 @@
     <body>
         <div id="app" class="container">
             <div class="searchBar">
-                <input v-model="inputSearch" type="text">
+                <input v-model="inputSearch" type="text" @keydown.enter="searchMovie">
                 <button v-on:click="searchMovie">
                     GO!
                 </button>
-                <div class="movieCard " v-for="(movie, index) in movie">
+                <!-- Media Card -->
+                <div class="mediaCard " v-for="(media, index) in medias" >
+                    <img :src="media.poster_path != null ? 'https://image.tmdb.org/t/p/w342/' + media.poster_path : 'img/placeholder.png'" alt="">
+                    <!-- title/name of the object -->
                     <div class="title">
                         <h2>
-                            {{ movie.name }}
-                            {{ movie.title }}
+                            {{ media.name }}
+                            {{ media.title }}
                         </h2>
                     </div>
+                    <!-- overview section -->
                     <div class="overview">
-                        {{ movie.overview}}
+                        {{ media.overview }}
                     </div>
+
+                    <div class="vote">
+                        <ul>
+                            <li>
+                                <h3>
+                                    Rating:
+                                </h3>
+                            </li>
+
+                            </li>
+                            <li v-for="star in getRating(media.vote_average)" >
+                                <i class="fas fa-star"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- info section -->
                     <div class="infoCard">
                         <p>
-                            {{ movie.release_date }}
+                            {{ media.release_date }}
                         </p>
 
                         <p>
-                            {{ movie.original_language}}
+                           <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
+                        </p>
+                        <p class="type">
+                            {{ media.media_type}}
                         </p>
                     </div>
-                    <!-- <div class="tvseriesCard " v-for="(serie, index) in tvseries">
-                        <div class="title">
-                            <h2>
-                                {{ serie.title }}
-                            </h2>
-                        </div>
-                        <div class="overview">
-                            {{ serie.overview}}
-                        </div>
-                        <div class="infoCard">
-                            <p>
-                                {{ serie.release_date }}
-                            </p>
-    
-                            <p>
-                                {{ serie.original_language}}
-                            </p>
-                        </div> -->
                 </div>
             </div>
         </div>
