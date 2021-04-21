@@ -26,7 +26,6 @@
                 <div class="cardBox">
                     <!-- Media Card -->
                     <div class="mediaCard " v-for="(media, index) in medias" >
-                        <img :src="media.poster_path != null ? 'https://image.tmdb.org/t/p/w342/' + media.poster_path : 'img/placeholder.png'" alt="">
                         <!-- title/name of the object -->
                         <div class="title">
                             <h2>
@@ -34,6 +33,14 @@
                                 {{ media.title }}
                             </h2>
                         </div>
+                        <div v-if="media.original_name != media.name || media.original_title != media.title" class="originalTitle">
+                            <h3>
+                                {{ media.original_name }}
+                                {{ media.original_title }}
+                            </h3>
+                        </div>
+                        <img :src="media.poster_path != null ? 'https://image.tmdb.org/t/p/w342/' + media.poster_path : 'img/placeholder.png'" alt="">
+                        
                         <!-- overview section -->
                         <div class="overview">
                             {{ media.overview }}
@@ -62,7 +69,8 @@
                             </p>
 
                             <p class="flag">
-                            <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
+                                <span> LNG: </span>
+                                <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
                             </p>
                             <p class="type">
                                 {{ media.media_type}}
