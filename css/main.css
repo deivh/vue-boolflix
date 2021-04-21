@@ -1,0 +1,44 @@
+/* regole generali */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* regole box contenitore */
+
+div.contentBox {
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+}
+
+div.searchBar {
+    display: flex;
+    align-self: center;
+}
+
+div.cardBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.cardBox div.mediaCard {
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+    width: 350px;
+    height: 650px;
+    background-color: rgb(36, 4, 77);
+}
+
+div.cardBox div.mediaCard img {
+    height: 300px;
+    width: 150px;
+}
+div.cardBox div.mediaCard div.infoCard p.flag img {
+    width: 15px;
+}

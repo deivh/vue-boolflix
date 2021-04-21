@@ -15,56 +15,62 @@
     </head>
     <body>
         <div id="app" class="container">
-            <div class="searchBar">
-                <input v-model="inputSearch" type="text" @keydown.enter="searchMovie">
-                <button v-on:click="searchMovie">
-                    GO!
-                </button>
-                <!-- Media Card -->
-                <div class="mediaCard " v-for="(media, index) in medias" >
-                    <img :src="media.poster_path != null ? 'https://image.tmdb.org/t/p/w342/' + media.poster_path : 'img/placeholder.png'" alt="">
-                    <!-- title/name of the object -->
-                    <div class="title">
-                        <h2>
-                            {{ media.name }}
-                            {{ media.title }}
-                        </h2>
-                    </div>
-                    <!-- overview section -->
-                    <div class="overview">
-                        {{ media.overview }}
-                    </div>
-
-                    <div class="vote">
-                        <ul>
-                            <li>
-                                <h3>
-                                    Rating:
-                                </h3>
-                            </li>
-
-                            </li>
-                            <li v-for="star in getRating(media.vote_average)" >
-                                <i class="fas fa-star"></i>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                    <!-- info section -->
-                    <div class="infoCard">
-                        <p>
-                            {{ media.release_date }}
-                        </p>
-
-                        <p>
-                           <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
-                        </p>
-                        <p class="type">
-                            {{ media.media_type}}
-                        </p>
-                    </div>
+            <div class="contentBox">
+                <!-- search movie or tv or person input  -->
+                <div class="searchBar">
+                    <input v-model="inputSearch" type="text" @keydown.enter="searchMovie">
+                    <button v-on:click="searchMovie">
+                        GO!
+                    </button>
                 </div>
+                <div class="cardBox">
+                    <!-- Media Card -->
+                    <div class="mediaCard " v-for="(media, index) in medias" >
+                        <img :src="media.poster_path != null ? 'https://image.tmdb.org/t/p/w342/' + media.poster_path : 'img/placeholder.png'" alt="">
+                        <!-- title/name of the object -->
+                        <div class="title">
+                            <h2>
+                                {{ media.name }}
+                                {{ media.title }}
+                            </h2>
+                        </div>
+                        <!-- overview section -->
+                        <div class="overview">
+                            {{ media.overview }}
+                        </div>
+
+                        <div class="vote">
+                            <ul>
+                                <li>
+                                    <h3>
+                                        Rating:
+                                    </h3>
+                                </li>
+
+                                </li>
+                                <li v-for="star in getRating(media.vote_average)" >
+                                    <i class="fas fa-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!-- info section -->
+                        <div class="infoCard">
+                            <p>
+                                {{ media.release_date }}
+                            </p>
+
+                            <p class="flag">
+                            <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
+                            </p>
+                            <p class="type">
+                                {{ media.media_type}}
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+                
             </div>
         </div>
     </body>
