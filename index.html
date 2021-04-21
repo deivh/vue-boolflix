@@ -18,10 +18,13 @@
             <div class="contentBox">
                 <!-- search movie or tv or person input  -->
                 <div class="searchBar">
-                    <input v-model="inputSearch" type="text" @keydown.enter="searchMovie">
-                    <button v-on:click="searchMovie">
-                        GO!
-                    </button>
+                    <h1>BOOLFLIX</h1>
+                    <div class="input">
+                        <input v-model="inputSearch" type="text" @keydown.enter="searchMovie">
+                        <button v-on:click="searchMovie">
+                            GO!
+                        </button>
+                    </div>
                 </div>
                 <div class="cardBox">
                     <!-- Media Card -->
@@ -72,6 +75,7 @@
                                 <span> LNG: </span>
                                 <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
                             </p>
+
                             <p class="type">
                                 {{ media.media_type}}
                             </p>
