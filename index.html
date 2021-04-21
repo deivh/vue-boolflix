@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Vue Dischi</title>
+        <title>BoolFlix</title>
         <!-- font awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <!-- vue -->
@@ -67,12 +67,12 @@
 
                         <!-- info section -->
                         <div class="infoCard">
-                            <p>
+                            <p class="releaseDate">
+                                <span>First Release: </span>
                                 {{ media.release_date }}
                             </p>
 
                             <p class="flag">
-                                <span> LNG: </span>
                                 <img :src="'img/' + media.original_language + '.svg'" alt="{{media.original_language}}">
                             </p>
 
